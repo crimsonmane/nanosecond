@@ -136,12 +136,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 . ~/BASH/lagging
 . ~/BASH/rebash
 . ~/BASH/editstuff
-#. ~/BASH/testfunction
 . ~/BASH/welcome1
 . ~/BASH/apt-history
 . ~/BASH/createpass
-#. ~/BASH/installreqs
-#. ~/BASH/webterm
+. ~/BASH/installreqs
+. ~/BASH/webterm
 
 #########################
 # The Terminal Greeting #
