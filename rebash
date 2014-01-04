@@ -1,0 +1,31 @@
+#! /bin/bash/
+########################
+# Restart/Refresh BASH #
+########################
+
+function rebash()
+{
+select rebashchoice in "With APT Update" "Without APT Update"
+do
+	case "$rebashchoice" in
+		"With APT Update")
+			echo -e "${Yellow}First, I'll update the APT repositories.${Color_Off}"
+			sleep 2s
+			sudo apt-get update
+			clear
+			echo -e "${Yellow}Now, I'll reset BASH for you.${Color_Off}"
+			sleep 2s
+			clear
+			source ~/.bashrc
+		return
+		;;
+		"Without APT Update")
+			echo -e "${Yellow}I'll reset BASH for you.${Color_Off}"
+			sleep 2s
+			clear
+			source ~/.bashrc
+		return
+		;;
+	esac
+done
+}
