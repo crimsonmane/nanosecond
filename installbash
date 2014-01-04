@@ -7,6 +7,7 @@ wget https://raw.github.com/cypher-neo/nanosecond/master/.bashrc -O .bashrc
 mkdir ~/BASH/
 cd ~/BASH/
 wget https://raw.github.com/cypher-neo/nanosecond/master/LICENSE -O LICENSE
+wget https://raw.github.com/cypher-neo/nanosecond/master/Tasklist -O Tasklist
 wget https://raw.github.com/cypher-neo/nanosecond/master/apt-history -O apt-history
 wget https://raw.github.com/cypher-neo/nanosecond/master/createpass -O createpass
 wget https://raw.github.com/cypher-neo/nanosecond/master/editstuff -O editstuff
