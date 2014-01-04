@@ -6,4 +6,4 @@ To install all my scripts easily, open a Terminal and type
 <blockquote><code>cd; wget https://raw.github.com/cypher-neo/nanosecond/master/installbash -O installbash</code></blockquote>
 
 Then type
-<blockquote><code>bash installbashscript</code></blockquote>
+<blockquote><code>bash installbash</code></blockquote>
