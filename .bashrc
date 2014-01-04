@@ -132,17 +132,17 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 ##########################
 # Extra Included Scripts #
 ##########################
-# . ~/BASH/compjoke
+. ~/BASH/compjoke
 # . ~/BASH/juliantime
 # . ~/BASH/lag
 # . ~/BASH/mtrmenu
 # . ~/BASH/rebash
 # . ~/BASH/editfunction
 # . ~/BASH/testfunction
-# . ~/BASH/welcome1
 # . ~/BASH/apt-history
 # . ~/BASH/createpass
 # . ~/BASH/installreqs
+. ~/BASH/welcome1
 
 #########################
 # The Terminal Greeting #
