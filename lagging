@@ -1,0 +1,27 @@
+#! /bin/bash/
+
+function lagging()
+{
+clear
+echo -e "This function is good for finding out what lags your computer, either physical or online.\nThe following selections are available to you.\n\nMTR Google Report - Sends off 25 packets to Google, then displays an mtr report to show you packet loss! Good for diagnosing a slow internet connection!\n\nMTR Continuous - This MTR runs indefinitely so you can see packet loss in realtime.\n\nWhat's Lagging Me - Sorts open programs by the ones that are using the most CPU and Memory.\n"
+select lagchoice in "MTR Google Report" "MTR Continuous" "Whats Lagging Me" "Quit Without Selection"
+do
+	case "$lagchoice" in
+		"MTR Google Report")
+			mtr -r -c 25 -o "SRDL BA JM" www.google.com
+			return
+			;;
+		"MTR Continuous")
+			mtr -o "SRDL BA JM" www.google.com
+			return
+			;;
+		"Whats Lagging Me")
+			ps -eo size,cputime,vsz,cmd,pid --sort=-size,-cputime,-vsz,+cmd,+pid | head --lines=20
+			return
+			;;
+		"Quit Without Selection")
+			return
+			;;
+	esac
+done
+}
