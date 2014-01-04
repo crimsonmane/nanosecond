@@ -132,7 +132,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 ##########################
 # Extra Included Scripts #
 ##########################
-# . ~/BASH/juliantime
+. ~/BASH/juliantime
 # . ~/BASH/lag
 # . ~/BASH/mtrmenu
 # . ~/BASH/rebash
