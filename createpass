@@ -1,0 +1,112 @@
+#! /bin/bash/
+
+function createpass()
+{
+clear
+echo -e "The following selections are available to you."
+select PASSCHOICE in left-handed right-handed urandom random64 hex date quit
+do
+	case "$PASSCHOICE" in
+		"left-handed")
+		    echo -e "\n${BRed}Passwords that can be typed with just the LEFT hand${Color_Off}"
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c16; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c16; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c16; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c16; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c32; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c32; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c64; echo ""
+		    return
+			;;
+		"right-handed")
+		    echo -e "\n${BRed}Passwords that can be typed with just the RIGHT hand${Color_Off}"
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c8; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c8; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c8; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c8; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c16; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c16; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c16; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c16; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c32; echo ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c32; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c64; echo ""
+			return
+			;;
+		"urandom")
+		    echo -e "\n${BRed}Urandom Passwords${Color_Off}"
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;
+		    echo -e ""
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
+		    echo -e ""
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
+		    echo -e ""
+		    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-64};echo;
+			return
+			;;
+		"random64")
+		    echo -e "\n${BRed}URandom Passwords Piped Thru Base64${Color_Off}"
+		    dd if=/dev/urandom bs=1 count=8 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=8 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=8 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=8 2>/dev/null | base64 -w 0 ; echo
+		    echo -e ""
+		    dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 -w 0 ; echo
+		    echo -e ""
+		    dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 ; echo
+		    dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 ; echo
+		    echo -e ""
+		    dd if=/dev/urandom bs=1 count=64 2>/dev/null | base64 -w 0 ; echo
+			return
+			;;
+		"hex")
+		    echo -e "\n${BRed}Hexadecimal Passwords${Color_Off}"
+		    </dev/urandom tr -dc [:xdigit:] | head -c8; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c8; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c8; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c8; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c16; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c16; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c16; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c16; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c32; echo ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c32; echo ""
+		    echo -e ""
+		    </dev/urandom tr -dc [:xdigit:] | head -c64; echo ""
+		    return			;;
+		"date")
+		    echo -e "\n\n${BRed}Passwords using date and time for the random modifier${Color_Off}"
+		    date +%s | md5sum ; echo
+		    date +%s | md5sum | base64 ; echo
+		    date +%s | sha256sum ; echo
+		    date +%s | sha256sum | base64 ; echo
+			return
+			;;
+		"quit")
+			return
+			;;
+	esac
+done
+}
