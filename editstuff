@@ -1,0 +1,237 @@
+#########################################################################
+# Edit Anything You Can Add To The Script 				#
+# Written by cypher-neo							#
+# github.com/cypher-neo/nanosecond					#
+#									#
+# The various sections of this script are set up to be easily copied	#
+# and tweaked, allowing easy access to any files or scripts you need to	#
+# edit a lot. Since I use KDE, my preferred editors are kate and nano,	#
+# but this can also be changed for other Linux environments,		#
+#########################################################################
+
+function editstuff()
+{
+clear
+echo -e "Edit what?"
+select editchoice in bashrc welcome tasklist julian createpass mtrmenu apt-history lag testfunction installreqs webterm editstuff
+do
+	case "$editchoice" in
+		"bashrc")
+			clear
+			echo -e "Edit .bashrc in:?"
+			select basheditchoice in nano kate
+				do
+					case "$basheditchoice" in
+						"nano")
+							nano ~/.bashrc
+						return
+						;;
+						"kate")
+							kate ~/.bashrc
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"welcome")
+			clear
+			echo -e "Edit Welcome script in:?"
+			select welcomeeditchoice in nano kate
+				do
+					case "$welcomeeditchoice" in
+						"nano")
+							nano ~/BASH/welcome1
+						return
+						;;
+						"kate")
+							kate ~/BASH/welcome1
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"tasklist")
+			clear
+			echo -e "Edit Tasklist in:?"
+			select taskeditchoice in nano kate
+				do
+					case "$taskeditchoice" in
+						"nano")
+							nano ~/BASH/Tasklist
+							return
+							;;
+						"kate")
+							kate ~/BASH/Tasklist
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"julian")
+			clear
+			echo -e "Edit Julian time function in:?"
+			select julianeditchoice in nano kate
+				do
+					case "$julianeditchoice" in
+						"nano")
+							nano ~/BASH/juliantime
+							return
+							;;
+						"kate")
+							kate ~/BASH/juliantime
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"createpass")
+			clear
+			echo -e "Edit createpass script in:?"
+			select passeditchoice in nano kate
+				do
+					case "$passeditchoice" in
+						"nano")
+							nano ~/BASH/createpass
+						return
+						;;
+						"kate")
+							kate ~/BASH/createpass
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"mtrmenu")
+			clear
+			echo -e "Edit mtrmenu script in:?"
+			select passeditchoice in nano kate
+				do
+					case "$passeditchoice" in
+						"nano")
+							nano ~/BASH/mtrmenu
+						return
+						;;
+						"kate")
+							kate ~/BASH/mtrmenu
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"apt-history")
+			clear
+			echo -e "Edit apt-history script in:?"
+			select passeditchoice in nano kate
+				do
+					case "$passeditchoice" in
+						"nano")
+							nano ~/BASH/apt-history
+						return
+						;;
+						"kate")
+							kate ~/BASH/apt-history
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"lag")
+			clear
+			echo -e "Edit the lag script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/lag
+							return
+							;;
+						"kate")
+							kate ~/BASH/lag
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"testfunction")
+			clear
+			echo -e "Edit the testfunction script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/testfunction
+							return
+							;;
+						"kate")
+							kate ~/BASH/testfunction
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"installreqs")
+			clear
+			echo -e "Edit the installreqs script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/installreqs
+							return
+							;;
+						"kate")
+							kate ~/BASH/installreqs
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"webterm")
+			clear
+			echo -e "Edit the webterm script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/webterm
+							return
+							;;
+						"kate")
+							kate ~/BASH/webterm
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"editstuff")
+			clear
+			echo -e "Edit the editstuff script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/editstuff
+							return
+							;;
+						"kate")
+							kate ~/BASH/editstuff
+							return
+							;;
+					esac
+				done
+				return
+			;;
+	esac
+done
+}
