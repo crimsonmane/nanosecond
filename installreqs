@@ -1,0 +1,41 @@
+#! /bin/bash/
+#################################################################
+# Install Script Requirements					#
+# This BASH script needs multiple programs installed in order	#
+# to function correctly. To install these programs, type the 	#
+# command "installreqs" and the script will install them all	#
+#################################################################
+
+function installreqs()
+{
+clear
+echo -e "Multiple functions are available to you. Do you want to: (select one)\nInstall PPA's into system.\nInstall required programs."
+select installreqschoice in "Add PPAs" "Install Programs"
+do
+	case "$installreqschoice" in
+		"Add PPAs")
+			clear
+			echo "Adding Ubuntu Wine PPA to your system."
+			sudo add-apt-repository ppa:ubuntu-wine/ppa
+			clear
+			echo "Adding JDownloader PPA to your system."
+			sudo add-apt-repository ppa:jd-team/jdownloader
+			clear
+			echo "Adding Chromium Daily Stable to your system."
+			sudo add-apt-repository ppa:chromium-daily/stable
+			clear
+			echo "Adding "
+			sudo add-apt-repository ppa:pipelight/stable
+			sudo apt-get update
+		return
+		;;
+		"Install Programs")
+			clear
+			echo -e "Adding a few programs onto your system."
+			sudo apt-get install curl fortune fortune-mod pipelight-multi tilda links2 elinks finch
+			sudo pipelight-plugin --enable silverlight
+		return
+		;;
+	esac
+done
+}
