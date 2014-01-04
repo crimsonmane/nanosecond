@@ -1,0 +1,64 @@
+#! /bin/bash/
+function apt-history()
+{
+clear
+echo "Check installs, upgrades, or removes?"
+select aptmenuchoice in "Installed Programs" "Upgraded Programs" "Removed Programs"
+do
+	case "$aptmenuchoice" in
+		"Installed Programs")
+		echo "Do you want to see every program you've ever installed, or just the last few?"
+		select installmenuchoice in all limited
+		do
+			case "$installmenuchoice" in
+			"all")
+			cat /var/log/dpkg.log | grep ' installed'
+			return
+			;;
+			"limited")
+			echo "Enter how many lines you wish to see of the INSTALL log:"
+			read limitnumber
+			cat /var/log/dpkg.log | grep ' installed' | tail -n $limitnumber
+			return
+			;;
+			esac
+		done
+			;;
+		"Upgraded Programs")
+		echo "Do you want to see every program upgraded, or just the last few?"
+		select upgrademenuchoice in all limited
+		do
+			case "$upgrademenuchoice" in
+			"all")
+			cat /var/log/dpkg.log | grep ' upgrade'
+			return
+			;;
+			"limited")
+			echo "Enter how many lines you wish to see of the UPGRADE log:"
+			read limitnumber
+			cat /var/log/dpkg.log | grep ' upgrade' | tail -n $limitnumber
+			return
+			;;
+			esac
+		done
+			;;
+		"remove")
+		echo "Do you want to see every program removed, or just the last few?"
+		select removemenuchoice in all limited
+		do
+			case "$removemenuchoice" in
+			"all")
+			cat /var/log/dpkg.log | grep ' remove'
+			return
+			;;
+			"limited")
+			echo "Enter how many lines you wish to see of the REMOVAL log:"
+			read limitnumber
+			cat /var/log/dpkg.log | grep ' remove' | tail -n $limitnumber
+			return
+			;;
+			esac
+		done
+	esac
+done
+}
