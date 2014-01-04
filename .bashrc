@@ -51,9 +51,9 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-#####################
-# LOOK! A RAINBOW!! #
-#####################
+###################################
+# LOOK! IT'S A RAINBOW OF COLORS! #
+###################################
 
 # Reset
 Color_Off='\e[0m'       # Text Reset
@@ -69,54 +69,54 @@ Cyan='\e[0;36m'         # Cyan
 White='\e[0;37m'        # White
 
 # Bold
-BBlack='\e[1;30m'       # Bold Black
-BRed='\e[1;31m'         # Bold Red
-BGreen='\e[1;32m'       # Bold Green
-BYellow='\e[1;33m'      # Bold Yellow
-BBlue='\e[1;34m'        # Bold Blue
-BPurple='\e[1;35m'      # Bold Purple
-BCyan='\e[1;36m'        # Bold Cyan
-BWhite='\e[1;37m'       # Bold White
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
 
 # Underline
-UBlack='\e[4;30m'       # Black Underline
-URed='\e[4;31m'         # Red Underline
-UGreen='\e[4;32m'       # Green Underline
-UYellow='\e[4;33m'      # Yellow Underline
-UBlue='\e[4;34m'        # Blue Underline
-UPurple='\e[4;35m'      # Purple Underline
-UCyan='\e[4;36m'        # Cyan Underline
-UWhite='\e[4;37m'       # White Underline
+UBlack='\e[4;30m'       # Black
+URed='\e[4;31m'         # Red
+UGreen='\e[4;32m'       # Green
+UYellow='\e[4;33m'      # Yellow
+UBlue='\e[4;34m'        # Blue
+UPurple='\e[4;35m'      # Purple
+UCyan='\e[4;36m'        # Cyan
+UWhite='\e[4;37m'       # White
 
-# High Intensity
-HIBlack='\e[0;90m'       # High Intensity Black
-HIRed='\e[0;91m'         # High Intensity Red
-HIGreen='\e[0;92m'       # High Intensity Green
-HIYellow='\e[0;93m'      # High Intensity Yellow
-HIBlue='\e[0;94m'        # High Intensity Blue
-HIPurple='\e[0;95m'      # High Intensity Purple
-HICyan='\e[0;96m'        # High Intensity Cyan
-HIWhite='\e[0;97m'       # High Intensity White
+# High Intensty
+HIBlack='\e[0;90m'       # Black
+HIRed='\e[0;91m'         # Red
+HIGreen='\e[0;92m'       # Green
+HIYellow='\e[0;93m'      # Yellow
+HIBlue='\e[0;94m'        # Blue
+HIPurple='\e[0;95m'      # Purple
+HICyan='\e[0;96m'        # Cyan
+HIWhite='\e[0;97m'       # White
 
-# Bold High Intensity
-BHIBlack='\e[1;90m'      # Bold High Intensity Black
-BHIRed='\e[1;91m'        # Bold High Intensity Red
-BHIGreen='\e[1;92m'      # Bold High Intensity Green
-BHIYellow='\e[1;93m'     # Bold High Intensity Yellow
-BHIBlue='\e[1;94m'       # Bold High Intensity Blue
-BHIPurple='\e[1;95m'     # Bold High Intensity Purple
-BHICyan='\e[1;96m'       # Bold High Intensity Cyan
-BHIWhite='\e[1;97m'      # Bold High Intensity White
+# Bold High Intensty
+BHIBlack='\e[1;90m'      # Black
+BHIRed='\e[1;91m'        # Red
+BHIGreen='\e[1;92m'      # Green
+BHIYellow='\e[1;93m'     # Yellow
+BHIBlue='\e[1;94m'       # Blue
+BHIPurple='\e[1;95m'     # Purple
+BHICyan='\e[1;96m'       # Cyan
+BHIWhite='\e[1;97m'      # White
 
-# Underline High Intensity
-UHIBlack='\e[4;90m'      # Underline High Intensity Black
-UHIRed='\e[4;91m'        # Underline High Intensity Red
-UHIGreen='\e[4;92m'      # Underline High Intensity Green
-UHIYellow='\e[4;93m'     # Underline High Intensity Yellow
-UHIBlue='\e[4;94m'       # Underline High Intensity Blue
-UHIPurple='\e[4;95m'     # Underline High Intensity Purple
-UHICyan='\e[4;96m'       # Underline High Intensity Cyan
-UHIWhite='\e[4;97m'      # Underline High Intensity White
+# Underline High Intensty
+UHIBlack='\e[4;90m'      # Black
+UHIRed='\e[4;91m'        # Red
+UHIGreen='\e[4;92m'      # Green
+UHIYellow='\e[4;93m'     # Yellow
+UHIBlue='\e[4;94m'       # Blue
+UHIPurple='\e[4;95m'     # Purple
+UHICyan='\e[4;96m'       # Cyan
+UHIWhite='\e[4;97m'      # White
 
 if [ "$color_prompt" = yes ]; then
     PS1="${debian_chroot:+($debian_chroot)}\[$BackRed\]\[$Blue\]\d \t \[$Color_Off\]\[$BackBlack\]\[$URed\]\u\[$UBlue\]@\[$UWhite\]\h\[$Color_Off\]\[$BBlue\]:\[$BBlue\]\w \[$BHIWhite\]\$\[$Color_Off\] "
@@ -133,15 +133,15 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Extra Included Scripts #
 ##########################
 . ~/BASH/juliantime
-# . ~/BASH/lag
-# . ~/BASH/mtrmenu
-# . ~/BASH/rebash
+. ~/BASH/lagging
+. ~/BASH/rebash
 . ~/BASH/editstuff
-# . ~/BASH/testfunction
-# . ~/BASH/apt-history
-. ~/BASH/createpass
-# . ~/BASH/installreqs
+#. ~/BASH/testfunction
 . ~/BASH/welcome1
+. ~/BASH/apt-history
+. ~/BASH/createpass
+#. ~/BASH/installreqs
+#. ~/BASH/webterm
 
 #########################
 # The Terminal Greeting #
@@ -180,3 +180,4 @@ fi
 
 # mint-fortune
 /usr/bin/mint-fortune
+
