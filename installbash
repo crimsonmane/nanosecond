@@ -1,0 +1,18 @@
+#! /bin/bash
+function installbashscript()
+{
+cd
+wget https://raw.github.com/cypher-neo/nanosecond/master/.bashrc -O .bashrc
+mkdir ~/BASH/
+cd ~/BASH/
+wget https://raw.github.com/cypher-neo/nanosecond/master/LICENSE -O LICENSE
+wget https://raw.github.com/cypher-neo/nanosecond/master/apt-history -O apt-history
+wget https://raw.github.com/cypher-neo/nanosecond/master/createpass -O createpass
+wget https://raw.github.com/cypher-neo/nanosecond/master/editstuff -O editstuff
+wget https://raw.github.com/cypher-neo/nanosecond/master/installreqs -O installreqs
+wget https://raw.github.com/cypher-neo/nanosecond/master/juliantime -O juliantime
+wget https://raw.github.com/cypher-neo/nanosecond/master/lagging -O lagging
+wget https://raw.github.com/cypher-neo/nanosecond/master/rebash -O rebash
+wget https://raw.github.com/cypher-neo/nanosecond/master/webterm -O webterm
+wget https://raw.github.com/cypher-neo/nanosecond/master/welcome1 -O welcome1
+}
