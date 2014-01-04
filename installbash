@@ -1,4 +1,5 @@
 #! /bin/bash
+
 function installbashscript()
 {
 cd
@@ -15,4 +16,8 @@ wget https://raw.github.com/cypher-neo/nanosecond/master/lagging -O lagging
 wget https://raw.github.com/cypher-neo/nanosecond/master/rebash -O rebash
 wget https://raw.github.com/cypher-neo/nanosecond/master/webterm -O webterm
 wget https://raw.github.com/cypher-neo/nanosecond/master/welcome1 -O welcome1
+clear
+source ~/.bashrc
 }
+
+installbashscript
