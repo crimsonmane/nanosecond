@@ -1,0 +1,50 @@
+#! /bin/bash/
+
+function webterm()
+{
+clear
+echo -e "Where do you wish to go?"
+select webchoice in internet IRC
+do
+	case "$webchoice" in
+		"internet")
+			clear
+			echo "Enter what page you wish to surf to."
+			read webaddress
+				echo "What program do you want to access the internet with?"
+				select internetchoice in chromium elinks links2
+				do
+					case "$internetchoice" in
+						"chromium")
+							chromium-browser $webaddress
+						return
+						;;
+						"elinks")
+							elinks $webaddress
+						return
+						;;
+						"links2")
+							links2 $webaddress
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"IRC")
+			clear
+				echo "What program should I use to access the IRC?"
+				select ircchoice in finch
+					do
+						case "$ircchoice" in
+							"finch")
+								finch
+							return
+							;;
+						esac
+					done
+					return
+				;;
+	esac
+done
+}
