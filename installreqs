@@ -32,8 +32,9 @@ do
 		"Install Programs")
 			clear
 			echo -e "Adding a few programs onto your system."
-			sudo apt-get install curl fortune fortune-mod pipelight-multi tilda links2 elinks finch
-			sudo pipelight-plugin --enable silverlight
+			sudo apt-get install curl fortune fortune-mod tilda links2 elinks finch
+#			sudo apt-get install pipelight-multi
+#			sudo pipelight-plugin --enable silverlight
 		return
 		;;
 	esac
