@@ -163,7 +163,13 @@ source ~/.bashrc
 #########################
 # Some Alias Defintions #
 #########################
-
+alias ls='ls --color=auto'
+alias ll='ls -l' 
+alias la='ls -A'
+alias lla='ls -la'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
 alias 400='chmod 400'
 alias 600='chmod 600'
 alias 644='chmod 644'
