@@ -1,14 +1,22 @@
 #! /bin/bash
 
-#########################################################################
-# Edit Anything You Can Add To The Script 				#
-# Written by cypher-neo							#
-# github.com/cypher-neo/nanosecond					#
+#########################COPYRIGHT NOTICE################################
+#Copyright (C) 2013 cypher-neo (github.com/cypher-neo)			#
 #									#
-# The various sections of this script are set up to be easily copied	#
-# and tweaked, allowing easy access to any files or scripts you need to	#
-# edit a lot. Since I use KDE, my preferred editors are kate and nano,	#
-# but this can also be changed for other Linux environments,		#
+#This program is free software; you can redistribute it and/or		#
+#modify it under the terms of the GNU General Public License		#
+#as published by the Free Software Foundation; either version 2		#
+#of the License, or (at your option) any later version.			#
+#									#
+#This program is distributed in the hope that it will be useful,	#
+#but WITHOUT ANY WARRANTY; without even the implied warranty of		#
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the		#
+#GNU General Public License for more details.				#
+#									#
+#You should have received a copy of the GNU General Public License	#
+#along with this program; if not, write to the				#
+#Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,	#
+#Boston, MA  02110-1301, USA.#						#
 #########################################################################
 
 function editstuff()
