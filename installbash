@@ -11,6 +11,7 @@ wget https://raw.github.com/cypher-neo/nanosecond/master/Tasklist -O Tasklist
 wget https://raw.github.com/cypher-neo/nanosecond/master/apt-history -O apt-history
 wget https://raw.github.com/cypher-neo/nanosecond/master/createpass -O createpass
 wget https://raw.github.com/cypher-neo/nanosecond/master/editstuff -O editstuff
+wget https://raw.github.com/cypher-neo/nanosecond/master/forcefontfsck -O forcefontfsck
 wget https://raw.github.com/cypher-neo/nanosecond/master/installreqs -O installreqs
 wget https://raw.github.com/cypher-neo/nanosecond/master/juliantime -O juliantime
 wget https://raw.github.com/cypher-neo/nanosecond/master/lagging -O lagging
