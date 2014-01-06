@@ -1,0 +1,20 @@
+#! /bin/bash/
+
+######################################
+# Flush and Recompile the Font Cache #
+######################################
+function refont()
+{
+fc-cache -frv
+}
+
+####################
+# Go FSCK Yourself #
+####################
+
+function forcefsck()
+{
+echo -e "{$Red}The next time you restart your computer, this will run an FSCK to check your drive for errors.{$Color_Off}"
+cd
+sudo touch /forcefsck
+}
