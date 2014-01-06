@@ -1,26 +1,8 @@
 #! /bin/bash/
 
-#########################COPYRIGHT NOTICE################################
-#Copyright (C) 2013 cypher-neo (github.com/cypher-neo)			#
-#									#
-#This program is free software; you can redistribute it and/or		#
-#modify it under the terms of the GNU General Public License		#
-#as published by the Free Software Foundation; either version 2		#
-#of the License, or (at your option) any later version.			#
-#									#
-#This program is distributed in the hope that it will be useful,	#
-#but WITHOUT ANY WARRANTY; without even the implied warranty of		#
-#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the		#
-#GNU General Public License for more details.				#
-#									#
-#You should have received a copy of the GNU General Public License	#
-#along with this program; if not, write to the				#
-#Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,	#
-#Boston, MA  02110-1301, USA.#						#
-#########################################################################
-
 function welcome1()
 {
+# who am i?
 username=$(whoami)
 ontime=$(uptime | sed 's/^[^u]*up  *\([^,]*\),.*/\1/')
 
@@ -31,14 +13,17 @@ randline1=${RANDARRAYONE[RANDOM % ${#RANDARRAYONE[*]}]}
 #Some quotes from The Roguelet's ABC
 declare -a RANDARRAYTWO=("Flitter flutter in the air, How I wonder why you're there? Chasing bats is not much fun - The worst is when you're killed by one." "See that funny little man, Try and catch him if you can. Quickly now! That's too slow - Where did all your money go?" "Think again before you try, to impale a floating eye. If you miss it with your sword, You may soon be very bored." "If a 'goblin (hob) waylays you, slice him up before he slays you. Nothing makes you look a slob, Like running from a hob'lin (gob)" "One big monster, he called troll. He don't rock and he don't roll, Drink no wine and smoke no stogies; He just love to eat them roguies.")
 randline2=${RANDARRAYTWO[RANDOM % ${#RANDARRAYTWO[*]}]}
+#Some Perlisms from "Epigrams in Programming", by Alan J. Perlis of Yale University.
+declare -a RANDARRAYTHREE=("One man's constant is another man's variable." "Everything should be built top-down, except the first time." "If a listener nods his head when you're explaining your program, wake him up." "A language that doesn't affect the way you think about programming, is not worth knowing." "To understand a program you must become both the machine and the program." "Simplicity does not precede complexity, but follows it." "There are two ways to write error-free programs; only the third one works." "In software systems, it is often the early bird that MAKES the worm." "The best book on programming for the layman is Alice in Wonderland; but that's because it's the best book on anything for the layman." "Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it." "When we write programs that LEARN, it turns out that we do and they don't." "If your computer speaks English, it was probably made in Japan." "Don't have good ideas if you aren't willing to be responsible for them." "Dealing with failure is easy: Work hard to improve. Success is also easy to handle: You've solved the wrong problem. Work hard to improve.")
+randline3=${RANDARRAYTHREE[RANDOM % ${#RANDARRAYTHREE[*]}]}
 
 
 hour=$(date +"%H")
-declare -a EARLYARRAY=("Have you gotten a life yet $username?" "Its really VERY late!" "Got insomnia $username?" "Why are you waking me up $username?" "Getting an early start on the day?" "Do you realize what time it is $username?" "You probably shouldn't be drinking coffee at this time of the day $username." "$randline1" "$randline2")
-declare -a MORNARRAY=("Whatever food, news, or images you internalize in the morning, will define the energy and perspective of your day. Choose wisely $username." "Good morning $username!" "Have a great morning $username!" "This is the beginning of a fine day." "Have you had your coffee yet this morning?" "Have a great day!" "$randline1" "$randline2")
-declare -a LUNCHARRAY=("It's lunchtime!" "Are you going to eat something or just keeping typing?" "I hope you remembered to bring a lunch today." "Go have a cup of coffee $username and then get back to work refreshed." "$randline1" "$randline2")
-declare -a AFTERARRAY=("Good afternoon $username!" "This looks like a great afternoon!" "Now that you've had a byte to eat, stop pounding on my keys so hard." "Welcome back, $username." "Have you had your afternoon cup of coffee yet $username?" "$randline1" "$randline2")
-declare -a EVEARRAY=("Good evening $username!" "How did your day go today?" "I hope you are feeling well this evening." "Did you have a good day today $username?" "$randline1" "$randline2")
+declare -a EARLYARRAY=("Have you gotten a life yet $username?" "Its really VERY late!" "Got insomnia $username?" "Why are you waking me up $username?" "Getting an early start on the day?" "Do you realize what time it is $username?" "You probably shouldn't be drinking coffee at this time of the day $username." "$randline1" "$randline2" "$randline3")
+declare -a MORNARRAY=("Whatever food, news, or images you internalize in the morning, will define the energy and perspective of your day. Choose wisely $username." "Good morning $username!" "Have a great morning $username!" "This is the beginning of a fine day." "Have you had your coffee yet this morning?" "Have a great day!" "$randline1" "$randline2" "$randline3")
+declare -a LUNCHARRAY=("It's lunchtime!" "Are you going to eat something or just keeping typing?" "I hope you remembered to bring a lunch today." "Go have a cup of coffee $username and then get back to work refreshed." "$randline1" "$randline2" "$randline3")
+declare -a AFTERARRAY=("Good afternoon $username!" "This looks like a great afternoon!" "Now that you've had a byte to eat, stop pounding on my keys so hard." "Welcome back, $username." "Have you had your afternoon cup of coffee yet $username?" "$randline1" "$randline2" "$randline3")
+declare -a EVEARRAY=("Good evening $username!" "How did your day go today?" "I hope you are feeling well this evening." "Did you have a good day today $username?" "$randline1" "$randline2" "$randline3")
 
 if [ $hour -ge 0 -a $hour -lt 7 ]; then
 welcomeline=${EARLYARRAY[RANDOM % ${#EARLYARRAY[*]}]}
