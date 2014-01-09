@@ -22,6 +22,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # Defaults Section
+mintVersion=$(inxi -S)
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -140,6 +141,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 . ~/BASH/juliantime
 . ~/BASH/lagging
 . ~/BASH/rebash
+#. ~/BASH/testfunction
 . ~/BASH/webterm
 . ~/BASH/welcome1
 
@@ -163,13 +165,7 @@ source ~/.bashrc
 #########################
 # Some Alias Defintions #
 #########################
-alias ls='ls --color=auto'
-alias ll='ls -l' 
-alias la='ls -A'
-alias lla='ls -la'
-alias df='df -h'
-alias du='du -c -h'
-alias mkdir='mkdir -p -v'
+
 alias 400='chmod 400'
 alias 600='chmod 600'
 alias 644='chmod 644'
