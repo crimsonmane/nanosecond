@@ -28,22 +28,24 @@ do
 	case "$webchoice" in
 		"internet")
 			clear
-			echo "Enter what page you wish to surf to."
-			read webaddress
-				echo "What program do you want to access the internet with?"
-				select internetchoice in chromium elinks links2
+			echo "What program do you want to access the internet with?"
+				select internetchoice in "Chromium Web Browser" "Firefox" "Elinks" "Links2"
 				do
 					case "$internetchoice" in
-						"chromium")
-							chromium-browser $webaddress
+						"Chromium Web Browser")
+							chromium-browser
 						return
 						;;
-						"elinks")
-							elinks $webaddress
+						"Firefox")
+							firefox
 						return
 						;;
-						"links2")
-							links2 $webaddress
+						"Elinks")
+							elinks
+						return
+						;;
+						"Links2")
+							links2
 						return
 						;;
 					esac
@@ -53,11 +55,15 @@ do
 		"IRC")
 			clear
 				echo "What program should I use to access the IRC?"
-				select ircchoice in finch
+				select ircchoice in "Finch" "Konversation"
 					do
 						case "$ircchoice" in
-							"finch")
+							"Finch")
 								finch
+							return
+							;;
+							"Konversation")
+								konversation
 							return
 							;;
 						esac
