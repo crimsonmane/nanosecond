@@ -47,10 +47,10 @@ do
 			echo -e "Adding a few programs onto your system."
 			case $mintVersion in
 				*"KDE"*)
-				sudo apt-get install curl fortunes fortune-mod fortunes-spam fortunes-bofh-excuses tilda finch konversation kuser ubuntu-restricted-extras ubuntu-restricted-addons
+				sudo apt-get install curl fortunes fortune-mod fortunes-spam fortunes-bofh-excuses tilda finch konversation kuser namebench ubuntu-restricted-extras ubuntu-restricted-addons
 				;;
 				*"Cinnamon"*)
-				sudo apt-get install curl fortunes fortune-mod fortunes-spam fortunes-bofh-excuses tilda finch pidgin ubuntu-restricted-extras ubuntu-restricted-addons
+				sudo apt-get install curl fortunes fortune-mod fortunes-spam fortunes-bofh-excuses tilda finch pidgin namebench ubuntu-restricted-extras ubuntu-restricted-addons
 				;;
 			esac
 		return
