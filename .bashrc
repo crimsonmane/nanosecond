@@ -141,7 +141,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 . ~/BASH/juliantime
 . ~/BASH/lagging
 . ~/BASH/rebash
-#. ~/BASH/testfunction
+. ~/BASH/testfunction
 . ~/BASH/webterm
 . ~/BASH/welcome1
 
@@ -172,6 +172,7 @@ alias 644='chmod 644'
 alias 700='chmod 700'    
 alias 755='chmod 755'
 alias 777='chmod 777'
+alias bc='bc -l'
 alias startmouse='synclient TouchpadOff=0'
 alias detailson='apt-cache showpkg'
 
