@@ -166,6 +166,7 @@ source ~/.bashrc
 # Some Alias Defintions #
 #########################
 
+alias ls='ls -al'
 alias 400='chmod 400'
 alias 600='chmod 600'
 alias 644='chmod 644'
@@ -175,6 +176,7 @@ alias 777='chmod 777'
 alias bc='bc -l'
 alias startmouse='synclient TouchpadOff=0'
 alias detailson='apt-cache showpkg'
+alias owned='sudo chown -R sean:sean'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
