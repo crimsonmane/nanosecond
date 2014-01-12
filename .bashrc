@@ -23,6 +23,7 @@ HISTFILESIZE=2000
 
 # Defaults Section
 mintVersion=$(inxi -S)
+iamme=$(whoami)
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -176,7 +177,7 @@ alias 777='chmod 777'
 alias bc='bc -l'
 alias startmouse='synclient TouchpadOff=0'
 alias detailson='apt-cache showpkg'
-alias owned='sudo chown -R sean:sean'
+alias owned='sudo chown -R $iamme:$iamme'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
