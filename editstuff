@@ -23,7 +23,7 @@ function editstuff()
 {
 clear
 echo -e "Edit what?"
-select editchoice in bashrc welcome tasklist julian createpass mtrmenu apt-history lag testfunction installreqs webterm editstuff
+select editchoice in bashrc rebash apt-history createpass forcefontfsck installreqs julian lagging pressanykey tasklist testfunction webterm welcome editstuff
 do
 	case "$editchoice" in
 		"bashrc")
@@ -44,36 +44,90 @@ do
 				done
 				return
 			;;
-		"welcome")
+		"rebash")
 			clear
-			echo -e "Edit Welcome script in:?"
-			select welcomeeditchoice in nano kate
+			echo -e "Edit .bashrc in:?"
+			select basheditchoice in nano kate
 				do
-					case "$welcomeeditchoice" in
+					case "$basheditchoice" in
 						"nano")
-							nano ~/BASH/welcome1
+							nano ~/BASH/rebash
 						return
 						;;
 						"kate")
-							kate ~/BASH/welcome1
+							kate ~/BASH/rebash
 						return
 						;;
 					esac
 				done
 				return
 			;;
-		"tasklist")
+		"apt-history")
 			clear
-			echo -e "Edit Tasklist in:?"
-			select taskeditchoice in nano kate
+			echo -e "Edit apt-history script in:?"
+			select historyeditchoice in nano kate
 				do
-					case "$taskeditchoice" in
+					case "$historyeditchoice" in
 						"nano")
-							nano ~/BASH/Tasklist
+							nano ~/BASH/apt-history
+						return
+						;;
+						"kate")
+							kate ~/BASH/apt-history
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"createpass")
+			clear
+			echo -e "Edit createpass script in:?"
+			select passeditchoice in nano kate
+				do
+					case "$passeditchoice" in
+						"nano")
+							nano ~/BASH/createpass
+						return
+						;;
+						"kate")
+							kate ~/BASH/createpass
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"forcefontfsck")
+			clear
+			echo -e "Edit forcefontfsck script in:?"
+			select forceeditchoice in nano kate
+				do
+					case "$forceeditchoice" in
+						"nano")
+							nano ~/BASH/forcefontfsck
+						return
+						;;
+						"kate")
+							kate ~/BASH/forccefontfsck
+						return
+						;;
+					esac
+				done
+				return
+			;;
+		"installreqs")
+			clear
+			echo -e "Edit the installreqs script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/installreqs
 							return
 							;;
 						"kate")
-							kate ~/BASH/Tasklist
+							kate ~/BASH/installreqs
 							return
 							;;
 					esac
@@ -98,72 +152,54 @@ do
 				done
 				return
 			;;
-		"createpass")
-			clear
-			echo -e "Edit createpass script in:?"
-			select passeditchoice in nano kate
-				do
-					case "$passeditchoice" in
-						"nano")
-							nano ~/BASH/createpass
-						return
-						;;
-						"kate")
-							kate ~/BASH/createpass
-						return
-						;;
-					esac
-				done
-				return
-			;;
-		"mtrmenu")
-			clear
-			echo -e "Edit mtrmenu script in:?"
-			select passeditchoice in nano kate
-				do
-					case "$passeditchoice" in
-						"nano")
-							nano ~/BASH/mtrmenu
-						return
-						;;
-						"kate")
-							kate ~/BASH/mtrmenu
-						return
-						;;
-					esac
-				done
-				return
-			;;
-		"apt-history")
-			clear
-			echo -e "Edit apt-history script in:?"
-			select passeditchoice in nano kate
-				do
-					case "$passeditchoice" in
-						"nano")
-							nano ~/BASH/apt-history
-						return
-						;;
-						"kate")
-							kate ~/BASH/apt-history
-						return
-						;;
-					esac
-				done
-				return
-			;;
-		"lag")
+		"lagging")
 			clear
 			echo -e "Edit the lag script in:?"
 			select editeditchoice in nano kate
 				do
 					case "$editeditchoice" in
 						"nano")
-							nano ~/BASH/lag
+							nano ~/BASH/lagging
 							return
 							;;
 						"kate")
-							kate ~/BASH/lag
+							kate ~/BASH/lagging
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"pressanykey")
+			clear
+			echo -e "Edit the lag script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/pressanykey
+							return
+							;;
+						"kate")
+							kate ~/BASH/pressanykey
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"tasklist")
+			clear
+			echo -e "Edit Tasklist in:?"
+			select taskeditchoice in nano kate
+				do
+					case "$taskeditchoice" in
+						"nano")
+							nano ~/BASH/Tasklist
+							return
+							;;
+						"kate")
+							kate ~/BASH/Tasklist
 							return
 							;;
 					esac
@@ -188,24 +224,6 @@ do
 				done
 				return
 			;;
-		"installreqs")
-			clear
-			echo -e "Edit the installreqs script in:?"
-			select editeditchoice in nano kate
-				do
-					case "$editeditchoice" in
-						"nano")
-							nano ~/BASH/installreqs
-							return
-							;;
-						"kate")
-							kate ~/BASH/installreqs
-							return
-							;;
-					esac
-				done
-				return
-			;;
 		"webterm")
 			clear
 			echo -e "Edit the webterm script in:?"
@@ -220,6 +238,24 @@ do
 							kate ~/BASH/webterm
 							return
 							;;
+					esac
+				done
+				return
+			;;
+		"welcome")
+			clear
+			echo -e "Edit Welcome script in:?"
+			select welcomeeditchoice in nano kate
+				do
+					case "$welcomeeditchoice" in
+						"nano")
+							nano ~/BASH/welcome1
+						return
+						;;
+						"kate")
+							kate ~/BASH/welcome1
+						return
+						;;
 					esac
 				done
 				return
