@@ -30,126 +30,126 @@ do
 		echo -e "\n${BRed}Passwords that can be typed with just the LEFT hand${Color_Off}"
 			for i in {1..5}
 				do
-			</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo ""
+			</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvZXCV' | head -c8; echo ""
 				done
 		echo ""
 			for i in {1..5}
 			do
-			</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c16; echo ""
+			</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvZXCV' | head -c16; echo ""
 			done
 		echo ""
 			for i in {1..3}
 			do
-			</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c32; echo ""
+			</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvZXCV' | head -c32; echo ""
 			done
 		echo ""
-		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c64; echo ""
+		    </dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvZXCV' | head -c64; echo ""
 		    return
 			;;
 		"Right Hand")
 		echo -e "\n${BRed}Passwords that can be typed with just the RIGHT hand${Color_Off}"
 			for i in {1..5}
 			do
-			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c8; echo ""
+			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLbnm,.BNM<>' | head -c8; echo ""
 			done
 		echo ""
 			for i in {1..5}
 			do
-			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c16; echo ""
+			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLbnm,.BNM<>' | head -c16; echo ""
 			done
 		echo ""
 			for i in {1..3}
 			do
-			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c32; echo ""
+			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLbnm,.BNM<>' | head -c32; echo ""
 			done
 		echo ""
-			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLvbnmVBNM' | head -c64; echo ""
+			</dev/urandom tr -dc '67890^&*()uiopUIOPhjklHJKLbnm,.BNM<>' | head -c64; echo ""
 			return
 			;;
 		"Pseudorandom")
 		echo -e "\n${BRed}Urandom Passwords${Color_Off}"
-		for i in {1..5}
+			for i in {1..5}
 			do
-		< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;
+			< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;
 			done
-		echo -e ""
-		for i in {1..5}
+		echo ""
+			for i in {1..5}
 			do
-		< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
+			< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
 			done
-		echo -e ""
-		for i in {1..3}
+		echo ""
+			for i in {1..3}
 			do
-		< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
+			< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
 			done
-		echo -e ""
+		echo ""
 		< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-64};echo;
 			return
 			;;
 		"Pseudorandom Piped Through Base 64")
 		echo -e "\n${BRed}URandom Passwords Piped Thru Base64${Color_Off}"
-		for i in {1..5}
+			for i in {1..5}
 			do
-		dd if=/dev/urandom bs=1 count=8 2>/dev/null | base64 -w 0 ; echo
+			dd if=/dev/urandom bs=1 count=8 2>/dev/null | base64 -w 0 ; echo
 			done
-		echo -e ""
-		for i in {1..5}
+		echo ""
+			for i in {1..5}
 			do
-		dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 -w 0 ; echo
+			dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64 -w 0 ; echo
 			done
-		echo -e ""
-		for i in {1..3}
+		echo ""
+			for i in {1..3}
 			do
-		dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 ; echo
+			dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 ; echo
 			done
-		echo -e ""
-		dd if=/dev/urandom bs=1 count=64 2>/dev/null | base64 -w 0 ; echo
+		echo ""
+			dd if=/dev/urandom bs=1 count=64 2>/dev/null | base64 -w 0 ; echo
 			return
 			;;
 		"Hexadecimal")
 		echo -e "\n${BRed}Hexadecimal Passwords${Color_Off}"
-		for i in {1..5}
+			for i in {1..5}
 			do
-		</dev/urandom tr -dc [:xdigit:] | head -c8; echo ""
+			</dev/urandom tr -dc [:xdigit:] | head -c8; echo ""
 			done
-		echo -e ""
-		for i in {1..5}
+		echo ""
+			for i in {1..5}
 			do
-		</dev/urandom tr -dc [:xdigit:] | head -c16; echo ""
+			</dev/urandom tr -dc [:xdigit:] | head -c16; echo ""
 			done
-		echo -e ""
-		for i in {1..5}
+		echo ""
+			for i in {1..5}
 			do
-		</dev/urandom tr -dc [:xdigit:] | head -c32; echo ""
+			</dev/urandom tr -dc [:xdigit:] | head -c32; echo ""
 			done
-		echo -e ""
-		</dev/urandom tr -dc [:xdigit:] | head -c64; echo ""
+		echo ""
+			</dev/urandom tr -dc [:xdigit:] | head -c64; echo ""
 			return
 			;;
 		"Random Using Date Seed")
 		echo -e "\n\n${BRed}Passwords using date and time for the random modifier${Color_Off}"
-		for i in {1..5}
+			for i in {1..5}
 			do
-		date +%s | md5sum
-		sleep 1s
+			date +%s | md5sum
+				sleep 1s
 			done
 		echo ""
-		for i in {1..5}
+			for i in {1..5}
 			do
-		date +%s | md5sum | base64
-		sleep 1s
+			date +%s | md5sum | base64
+				sleep 1s
 			done
 		echo ""
-		for i in {1..5}
+			for i in {1..5}
 			do
-		date +%s | sha256sum
-		sleep 1s
+			date +%s | sha256sum
+				sleep 1s
 			done
 		echo ""
-		for i in {1..5}
+			for i in {1..5}
 			do
-		date +%s | sha256sum | base64
-		sleep 1s
+			date +%s | sha256sum | base64
+				sleep 1s
 			done
 			return
 			;;
