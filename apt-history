@@ -62,7 +62,7 @@ do
 			esac
 		done
 			;;
-		"remove")
+		"Removed Programs")
 		echo "Do you want to see every program removed, or just the last few?"
 		select removemenuchoice in all limited
 		do
