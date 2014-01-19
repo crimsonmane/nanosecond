@@ -37,8 +37,12 @@ do
 			echo "Adding Chromium Daily Stable to your system."
 			sudo add-apt-repository ppa:chromium-daily/stable
 			clear
-			echo "Adding "
+			echo "Adding Pipelight PPA"
 			sudo add-apt-repository ppa:pipelight/stable
+			clear
+			echo "Adding QMMP PPA"
+			sudo add-apt-repository ppa:forkotov02/ppa
+			clear
 			sudo apt-get update
 		return
 		;;
@@ -47,10 +51,10 @@ do
 			echo -e "Adding a few programs onto your system."
 			case $mintVersion in
 				*"KDE"*)
-				sudo apt-get install curl fortunes fortune-mod fortunes-spam fortunes-bofh-excuses tilda finch konversation kuser namebench ubuntu-restricted-extras ubuntu-restricted-addons
+				sudo apt-get install curl fortunes fortune-mod qmmp qmmp-plugin-pack fortunes-spam fortunes-bofh-excuses tilda finch konversation kuser namebench ubuntu-restricted-extras ubuntu-restricted-addons
 				;;
 				*"Cinnamon"*)
-				sudo apt-get install curl fortunes fortune-mod fortunes-spam fortunes-bofh-excuses tilda finch pidgin namebench ubuntu-restricted-extras ubuntu-restricted-addons
+				sudo apt-get install curl fortunes fortune-mod qmmp qmmp-plugin-pack fortunes-spam fortunes-bofh-excuses tilda finch pidgin namebench ubuntu-restricted-extras ubuntu-restricted-addons
 				;;
 			esac
 		return
