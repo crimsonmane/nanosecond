@@ -1,0 +1,23 @@
+#! /bin/bash/
+
+function unlockdpkg()
+{
+echo -e "Here are the programs which have executed a lock on /var/lib/dpkg/lock.\n${Red}Try killing those programs in another Terminal.${Color_Off} If that doesn't work, press the key to continue."
+sudo fuser -vvv /var/lib/dpkg/lock
+pressanykey
+clear
+echo -e "Here are the programs which have executed a lock on /var/cache/apt/archives/lock\n${Red}Try killing those programs in another Terminal.${Color_Off}\nIf that doesn't work, press the key to continue."
+sudo fuser -vvv /var/cache/apt/archives/lock
+pressanykey
+echo -e "Since those steps didn't work, I'll forceably remove the locks now."
+sudo rm -fv /var/lib/apt/lists/lock
+pressanykey
+sudo rm -fv /var/lib/dpkg/lock
+pressanykey
+sudo rm -fv /var/cache/apt/archives/lock
+pressanykey
+clear
+echo -e "As one final measure, let's update the Apt-Xapian Index."
+pressanykey
+sudo update-apt-xapian-index  --force
+}
