@@ -23,7 +23,7 @@ function editstuff()
 {
 clear
 echo -e "Edit what?"
-select editchoice in bashrc rebash apt-history createpass forcefontfsck installreqs julian lagging pressanykey tasklist testfunction webterm welcome editstuff
+select editchoice in bashrc rebash apt-history createpass forcefontfsck installreqs julian lagging pressanykey tasklist testfunction unlockdpkg webterm welcome editstuff
 do
 	case "$editchoice" in
 		"bashrc")
@@ -218,6 +218,24 @@ do
 							;;
 						"kate")
 							kate ~/BASH/testfunction
+							return
+							;;
+					esac
+				done
+				return
+			;;
+		"unlockdpkg")
+			clear
+			echo -e "Edit the testfunction script in:?"
+			select editeditchoice in nano kate
+				do
+					case "$editeditchoice" in
+						"nano")
+							nano ~/BASH/unlockdpkg
+							return
+							;;
+						"kate")
+							kate ~/BASH/unlockdpkg
 							return
 							;;
 					esac
