@@ -139,9 +139,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 . ~/BASH/editstuff
 . ~/BASH/forcefontfsck
 . ~/BASH/installreqs
+. ~/BASH/juliantime
 . ~/BASH/lagging
 . ~/BASH/pressanykey
 . ~/BASH/rebash
+. ~/BASH/unlockdpkg
 . ~/BASH/webterm
 . ~/BASH/welcome1
 
