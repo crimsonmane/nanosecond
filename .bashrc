@@ -140,8 +140,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 . ~/BASH/forcefontfsck
 . ~/BASH/installreqs
 . ~/BASH/lagging
+. ~/BASH/pressanykey
 . ~/BASH/rebash
-. ~/BASH/testfunction
 . ~/BASH/webterm
 . ~/BASH/welcome1
 
