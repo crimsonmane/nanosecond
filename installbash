@@ -33,7 +33,9 @@ wget https://raw.github.com/cypher-neo/nanosecond/master/editstuff -O editstuff
 wget https://raw.github.com/cypher-neo/nanosecond/master/forcefontfsck -O forcefontfsck
 wget https://raw.github.com/cypher-neo/nanosecond/master/installreqs -O installreqs
 wget https://raw.github.com/cypher-neo/nanosecond/master/lagging -O lagging
+wget https://raw.github.com/cypher-neo/nanosecond/master/pressanykey -O pressanykey
 wget https://raw.github.com/cypher-neo/nanosecond/master/rebash -O rebash
+wget https://raw.github.com/cypher-neo/nanosecond/master/unlockdpkg -O unlockdpkg
 wget https://raw.github.com/cypher-neo/nanosecond/master/webterm -O webterm
 wget https://raw.github.com/cypher-neo/nanosecond/master/welcome1 -O welcome1
 clear
