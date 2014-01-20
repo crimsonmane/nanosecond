@@ -23,10 +23,10 @@ function webterm()
 {
 clear
 echo -e "Where do you wish to go?"
-select webchoice in internet IRC
+select webchoice in "Internet" "IRC" "Update DNS"
 do
 	case "$webchoice" in
-		"internet")
+		"Internet")
 			clear
 			echo "What program do you want to access the internet with?"
 				select internetchoice in "Chromium Web Browser" "Firefox" "Elinks" "Links2"
@@ -68,6 +68,13 @@ do
 							;;
 						esac
 					done
+					return
+				;;
+		"Update DNS")
+				clear
+					echo -e "First I'll run namebench to determine the fastest DNS servers for you to use.\nAfter this is done update your Internet Settings with the results.\n\n"
+					pressanykey
+					namebench
 					return
 				;;
 	esac
