@@ -22,65 +22,55 @@ rugscurrent="0"
 gunpowdercurrent="0"
 clear
 echo -e "Enter the current prices"
-echo "Salt Price"
-read saltcurrent
-if [ $saltlow = "" ]; then saltlow=($saltcurrent);fi
-if [ $salthigh = "" ]; then salthigh=($saltcurrent);fi
-if [ $saltcurrent > $salthigh ]; then salthigh=($saltcurrent);fi
-if [ $saltcurrent < $saltlow ]; then saltlow=($saltcurrent);fi
-echo "Tea Price"
-read teacurrent
-if [ "$tealow" = "" ]; then tealow=($teacurrent);fi
-if [ "$teahigh" = "" ]; then teahigh=($teacurrent);fi
-if [ "$teacurrent" > "$teahigh" ]; then teahigh=($teacurrent);fi
-if [ "$teacurrent" < "$tealow" ]; then tealow=($teacurrent);fi
-echo "Wine Price"
-read winecurrent
-if [ "$winelow" = "" ]; then winelow=($winecurrent);fi
-if [ "$winehigh" = "" ]; then winehigh=($winecurrent);fi
-if [ "$winecurrent" > "$winehigh" ]; then winehigh=($winecurrent);fi
-if [ "$winecurrent" < "$winelow" ]; then winelow=($winecurrent);fi
-echo "Amber Price"
-read ambercurrent
-if [ "$amberlow" = "" ]; then amberlow=($ambercurrent);fi
-if [ "$amberhigh" = "" ]; then amberhigh=($ambercurrent);fi
-if [ "$ambercurrent" > "$amberhigh" ]; then amberhigh=($ambercurrent);fi
-if [ "$ambercurrent" < "$amberlow" ]; then amberlow=($ambercurrent);fi
-echo "Oil Price"
-read oilcurrent
-if [ "$oillow" = "" ]; then oillow=($oilcurrent);fi
-if [ "$oilhigh" = "" ]; then oilhigh=($oilcurrent);fi
-if [ "$oilcurrent" > "$oilhigh" ]; then oilhigh=($oilcurrent);fi
-if [ "$oilcurrent" < "$oillow" ]; then oillow=($oilcurrent);fi
-echo "Weapons Price"
-read weaponscurrent
-if [ "$weaponslow" = "" ]; then weaponslow=($weaponscurrent);fi
-if [ "$weaponshigh" = "" ]; then weaponshigh=($weaponscurrent);fi
-if [ "$weaponscurrent" > "$weaponshigh" ]; then weaponshigh=($weaponscurrent);fi
-if [ "$weaponscurrent" < "$weaponslow" ]; then weaponslow=($weaponscurrent);fi
-echo "Parchment Price"
-read parchmentcurrent
-if [ "$parchmentlow" = "" ]; then parchmentlow=($parchmentcurrent);fi
-if [ "$parchmenthigh" = "" ]; then parchmenthigh=($parchmentcurrent);fi
-if [ "$parchmentcurrent" > "$parchmenthigh" ]; then parchmenthigh=($parchmentcurrent);fi
-if [ "$parchmentcurrent" < "$parchmentlow" ]; then parchmentlow=($parchmentcurrent);fi
-echo "Indigo Price"
-read indigocurrent
-if [ "$indigolow" = "" ]; then indigolow=($indigocurrent);fi
-if [ "$indigohigh" = "" ]; then indigohigh=($indigocurrent);fi
-if [ "$indigocurrent" > "$indigohigh" ]; then indigohigh=($indigocurrent);fi
-if [ "$indigocurrent" < "$indigolow" ]; then indigolow=($indigocurrent);fi
-echo "Rugs Price"
-read rugscurrent
-if [ "$rugslow" = "" ]; then rugslow=($rugscurrent);fi
-if [ "$rugshigh" = "" ]; then rugshigh=($rugscurrent);fi
-if [ "$rugscurrent" > "$rugshigh" ]; then rugshigh=($rugscurrent);fi
-if [ "$rugscurrent" < "$rugslow" ]; then rugslow=($rugscurrent);fi
-echo "Gunpowder Price"
-read gunpowdercurrent
-if [ "$gunpowderlow" = "" ]; then gunpowderlow=($gunpowdercurrent);fi
-if [ "$gunpowderhigh" = "" ]; then gunpowderhigh=($gunpowdercurrent);fi
-if [ "$gunpowdercurrent" > "$gunpowderhigh" ]; then gunpowderhigh=($gunpowdercurrent);fi
-if [ "$gunpowdercurrent" < "$gunpowderlow" ]; then gunpowderlow=($gunpowdercurrent);fi
+read -p "Salt Price" saltprice
+if [ -z $saltlow ]; then saltlow=($saltcurrent);fi
+if [ -z $salthigh ]; then salthigh=($saltcurrent);fi
+if (($saltcurrent > $salthigh)); then salthigh=($saltcurrent);fi
+if (($saltcurrent < $saltlow)); then saltlow=($saltcurrent);fi
+read -p "Tea Price" teacurrent
+if [ -z $tealow ]; then tealow=($teacurrent);fi
+if [ -z $teahigh ]; then teahigh=($teacurrent);fi
+if (($teacurrent > $teahigh)); then teahigh=($teacurrent);fi
+if (($teacurrent < $tealow)); then tealow=($teacurrent);fi
+read -p "Wine Price" winecurrent
+if [ -z $winelow ]; then winelow=($winecurrent);fi
+if [ -z $winehigh ]; then winehigh=($winecurrent);fi
+if (($winecurrent > $winehigh)); then winehigh=($winecurrent);fi
+if (($winecurrent < $winelow)); then winelow=($winecurrent);fi
+read -p "Amber Price" ambercurrent
+if [ -z $amberlow ]; then amberlow=($ambercurrent);fi
+if [ -z $amberhigh ]; then amberhigh=($ambercurrent);fi
+if (($ambercurrent > $amberhigh)); then amberhigh=($ambercurrent);fi
+if (($ambercurrent < $amberlow)); then amberlow=($ambercurrent);fi
+read -p "Oil Price" oilcurrent
+if [ -z $oillow ]; then oillow=($oilcurrent);fi
+if [ -z $oilhigh ]; then oilhigh=($oilcurrent);fi
+if (($oilcurrent > $oilhigh)); then oilhigh=($oilcurrent);fi
+if (($oilcurrent < $oillow)); then oillow=($oilcurrent);fi
+read -p "Weapons Price" weaponscurrent
+if [ -z $weaponslow ]; then weaponslow=($weaponscurrent);fi
+if [ -z $weaponshigh ]; then weaponshigh=($weaponscurrent);fi
+if (($weaponscurrent > $weaponshigh)); then weaponshigh=($weaponscurrent);fi
+if (($weaponscurrent < $weaponslow)); then weaponslow=($weaponscurrent);fi
+read -p "Parchment Price" parchmentcurrent
+if [ -z $parchmentlow ]; then parchmentlow=($parchmentcurrent);fi
+if [ -z $parchmenthigh ]; then parchmenthigh=($parchmentcurrent);fi
+if (($parchmentcurrent > $parchmenthigh)); then parchmenthigh=($parchmentcurrent);fi
+if (($parchmentcurrent < $parchmentlow)); then parchmentlow=($parchmentcurrent);fi
+read -p "Indigo Price" indigocurrent
+if [ -z $indigolow ]; then indigolow=($indigocurrent);fi
+if [ -z $indigohigh ]; then indigohigh=($indigocurrent);fi
+if (($indigocurrent > $indigohigh)); then indigohigh=($indigocurrent);fi
+if (($indigocurrent < $indigolow)); then indigolow=($indigocurrent);fi
+read -p "Rugs Price" rugscurrent
+if [ -z $rugslow ]; then rugslow=($rugscurrent);fi
+if [ -z $rugshigh ]; then rugshigh=($rugscurrent);fi
+if (($rugscurrent > $rugshigh)); then rugshigh=($rugscurrent);fi
+if (($rugscurrent < $rugslow)); then rugslow=($rugscurrent);fi
+read -p "Gunpowder Price" gunpowdercurrent
+if [ -z $gunpowderlow ]; then gunpowderlow=($gunpowdercurrent);fi
+if [ -z $gunpowderhigh ]; then gunpowderhigh=($gunpowdercurrent);fi
+if (($gunpowdercurrent > $gunpowderhigh)); then gunpowderhigh=($gunpowdercurrent);fi
+if (($gunpowdercurrent < $gunpowderlow)); then gunpowderlow=($gunpowdercurrent);fi
 tradersdisplay
 }
