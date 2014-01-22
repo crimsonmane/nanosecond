@@ -1,78 +1,38 @@
 #! /bin/bash/
 
-function tradersdisplay()
+function tradedisplay()
 {
-clear
-echo -e "Item\t\t\tLow\tHigh\nSalt\t\t\t$saltlow\t$salthigh\nTea\t\t\t$tealow\t$teahigh\nWine\t\t\t$winelow\t$winehigh\nAmber\t\t\t$amberlow\t$amberhigh\nOil\t\t\t$oillow\t$oilhigh\nWeapons\t\t\t$weaponslow\t$weaponshigh\nParchment\t\t$parchmentlow\t$parchmenthigh\nIndigo\t\t\t$indigolow\t$indigohigh\n\nCONTRABAND\nRugs\t\t\t$rugslow\t$rugshigh\nGunpowder\t\t$gunpowderlow\t$gunpowderhigh"
-pressanykey
-echo -e "Stop or Continue the program?"
-select traderchoice in "Stop" "Continue"
-do
-	case "$traderchoice" in
-		"Stop")
-			exit
-			;;
-		"Continue")
-			clear
-			tradewind
-			;;
-	esac
-done
+	clear
+	format="%10s\t%10s\t%10s\n"
+	printf "$format" "Item" "Low" "High"
+	printf "$format" "====" "===" "===="
+	for (( i = 0 ; i < ${#item[@]} ; i++ ))
+	do
+		printf "$format" ${item[$i]} ${low[$i]} ${high[$i]}
+	done
+	read -n1 -sp "Press any key to continue, or CTRL+C to quit."
 }
 
-function tradewind()
-{
-clear
-echo -e "Enter the current prices"
-read -p "Salt Price=" saltcurrent
-if [ -z $saltlow ]; then saltlow=($saltcurrent);fi
-if [ -z $salthigh ]; then salthigh=($saltcurrent);fi
-if (($saltcurrent > $salthigh)); then salthigh=($saltcurrent);fi
-if (($saltcurrent < $saltlow)); then saltlow=($saltcurrent);fi
-read -p "Tea Price=" teacurrent
-if [ -z $tealow ]; then tealow=($teacurrent);fi
-if [ -z $teahigh ]; then teahigh=($teacurrent);fi
-if (($teacurrent > $teahigh)); then teahigh=($teacurrent);fi
-if (($teacurrent < $tealow)); then tealow=($teacurrent);fi
-read -p "Wine Price=" winecurrent
-if [ -z $winelow ]; then winelow=($winecurrent);fi
-if [ -z $winehigh ]; then winehigh=($winecurrent);fi
-if (($winecurrent > $winehigh)); then winehigh=($winecurrent);fi
-if (($winecurrent < $winelow)); then winelow=($winecurrent);fi
-read -p "Amber Price=" ambercurrent
-if [ -z $amberlow ]; then amberlow=($ambercurrent);fi
-if [ -z $amberhigh ]; then amberhigh=($ambercurrent);fi
-if (($ambercurrent > $amberhigh)); then amberhigh=($ambercurrent);fi
-if (($ambercurrent < $amberlow)); then amberlow=($ambercurrent);fi
-read -p "Oil Price=" oilcurrent
-if [ -z $oillow ]; then oillow=($oilcurrent);fi
-if [ -z $oilhigh ]; then oilhigh=($oilcurrent);fi
-if (($oilcurrent > $oilhigh)); then oilhigh=($oilcurrent);fi
-if (($oilcurrent < $oillow)); then oillow=($oilcurrent);fi
-read -p "Weapons Price=" weaponscurrent
-if [ -z $weaponslow ]; then weaponslow=($weaponscurrent);fi
-if [ -z $weaponshigh ]; then weaponshigh=($weaponscurrent);fi
-if (($weaponscurrent > $weaponshigh)); then weaponshigh=($weaponscurrent);fi
-if (($weaponscurrent < $weaponslow)); then weaponslow=($weaponscurrent);fi
-read -p "Parchment Price=" parchmentcurrent
-if [ -z $parchmentlow ]; then parchmentlow=($parchmentcurrent);fi
-if [ -z $parchmenthigh ]; then parchmenthigh=($parchmentcurrent);fi
-if (($parchmentcurrent > $parchmenthigh)); then parchmenthigh=($parchmentcurrent);fi
-if (($parchmentcurrent < $parchmentlow)); then parchmentlow=($parchmentcurrent);fi
-read -p "Indigo Price=" indigocurrent
-if [ -z $indigolow ]; then indigolow=($indigocurrent);fi
-if [ -z $indigohigh ]; then indigohigh=($indigocurrent);fi
-if (($indigocurrent > $indigohigh)); then indigohigh=($indigocurrent);fi
-if (($indigocurrent < $indigolow)); then indigolow=($indigocurrent);fi
-read -p "Rugs Price=" rugscurrent
-if [ -z $rugslow ]; then rugslow=($rugscurrent);fi
-if [ -z $rugshigh ]; then rugshigh=($rugscurrent);fi
-if (($rugscurrent > $rugshigh)); then rugshigh=($rugscurrent);fi
-if (($rugscurrent < $rugslow)); then rugslow=($rugscurrent);fi
-read -p "Gunpowder Price=" gunpowdercurrent
-if [ -z $gunpowderlow ]; then gunpowderlow=($gunpowdercurrent);fi
-if [ -z $gunpowderhigh ]; then gunpowderhigh=($gunpowdercurrent);fi
-if (($gunpowdercurrent > $gunpowderhigh)); then gunpowderhigh=($gunpowdercurrent);fi
-if (($gunpowdercurrent < $gunpowderlow)); then gunpowderlow=($gunpowdercurrent);fi
-tradersdisplay
+function getPrice(){
+	for (( i = 0 ; i < ${#item[@]} ; i++ ))
+	do
+		read -p "Price of ${item[$i]}: " current[$i]
+		if [[ ${low[$i]} == ${item[$i]} ]]; then low[$i]=${current[$i]};fi
+		if [[ ${high[$i]} == ${item[$i]} ]]; then high[$i]=${current[$i]};fi
+		if [[ current[$i] > high[$i] ]]; then high[$i]=${current[$i]};fi
+		if [[ current[$i] < low[$i] ]]; then low[$i]=${current[$i]};fi
+	done
 }
+
+# MAIN PROGRAM
+declare -a item=(Salt Tea Wine Amber Oil Weapons Parchment Indigo Rugs Gunpower)
+declare -a low=(${item[@]})
+declare -a current=(${item[@]})
+declare -a high=(${item[@]})
+while :
+do
+	clear
+	echo -e "Enter the current prices"
+	getPrice "${item[@]}"
+	tradedisplay
+done
